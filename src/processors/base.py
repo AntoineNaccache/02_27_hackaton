@@ -181,6 +181,24 @@ class BaseProcessor:
                     "content": loaded_rules[rule_set],
                 })
 
+    # -- Step-aware pipeline (for UI inspection) ----------------------------
+
+    def process_with_steps(self, utterance: dict) -> dict:
+        """Like process(), but returns every intermediate text for diffing."""
+        raw_text = utterance.get("text", "")
+        after_punctuation = self._call_mistral(self.punctuation_system_prompt, raw_text)
+        after_grammar = self._call_grammar_agent(after_punctuation)
+        doctor_prompt = _load_doctor_system_prompt()
+        after_doctor = (
+            self._call_mistral(doctor_prompt, after_grammar) if doctor_prompt else after_grammar
+        )
+        return {
+            "raw": raw_text,
+            "after_punctuation": after_punctuation,
+            "after_grammar": after_grammar,
+            "after_doctor": after_doctor,
+        }
+
     # -- Main pipeline ------------------------------------------------------
 
     def process(self, utterance: dict) -> str:
