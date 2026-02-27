@@ -12,5 +12,6 @@ __pycache__/
 dist/
 build/
 
-# Local scratch space
-/local/
+# Local scratch space — output PDFs and other generated files
+/local/*
+!/local/.gitkeep
