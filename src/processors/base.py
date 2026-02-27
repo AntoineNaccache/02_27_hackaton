@@ -143,8 +143,13 @@ class BaseProcessor:
           - The agent inspects the text and calls load_rule_set() for each
             category of error it detects.
           - After loading all needed rule sets, it returns the corrected text.
+        Falls back to a simple chat call when no rule sets exist for the language.
         """
         tools = _build_grammar_tools(self.language)
+        if not tools:
+            # No rule-set files for this language — skip tool use entirely
+            return self._call_mistral(self.grammar_system_prompt, text)
+
         messages = [
             {"role": "system", "content": self.grammar_system_prompt},
             {"role": "user", "content": text},

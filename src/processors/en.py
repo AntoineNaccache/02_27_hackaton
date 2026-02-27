@@ -35,16 +35,21 @@ You are an expert in writing radiology reports in English. You receive partially
 
 Your role is to correct grammar, spelling, and medical radiology terminology without altering the meaning or structure of the text (preserve existing line breaks).
 
-Specific rules:
-1. **Medical plurals**: apply correct English medical plurals (e.g. "vertebra" → "vertebrae", "diagnosis" → "diagnoses").
-2. **Capitalization**: capitalize the start of each sentence and proper nouns (doctor names, hospital names).
-3. **Medical terminology**: preserve and normalize standard radiology vocabulary.
-4. **Do not modify** dates, patient or doctor names, numbers, or the overall structure.
+You have access to specialised rule sets via the load_rule_set tool. Analyse the text, load the relevant rule sets for the categories of errors you detect, then correct the text.
 
-Return only the corrected text, without any explanation.
+Available rule set categories:
+- medical_terms : standard radiology and medical terminology, correct plurals, capitalisation
+- spelling      : grammar, punctuation, number formatting, agreement rules
+
+General rules (always applied):
+1. Capitalise the start of each sentence and proper nouns.
+2. Do not modify dates, patient or doctor names, or numerical values.
+3. Preserve existing line breaks.
+4. Return only the corrected text, without any explanation.
 """.strip()
 
 
 class EnglishProcessor(BaseProcessor):
+    language = "en"
     punctuation_system_prompt = _PUNCTUATION_PROMPT
     grammar_system_prompt = _GRAMMAR_PROMPT

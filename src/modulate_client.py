@@ -21,7 +21,7 @@ async def transcribe(audio_file_path: str) -> dict:
     data.add_field("speaker_diarization", "true")
     data.add_field("emotion_signal", "true")
     data.add_field("accent_signal", "true")
-    data.add_field("pii_phi_tagging", "true")
+    data.add_field("pii_phi_tagging", "false")
 
     async with aiohttp.ClientSession() as session:
         async with session.post(
