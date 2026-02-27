@@ -59,7 +59,7 @@ def main():
 
     processor = FrenchProcessor()
     # Call only the grammar agent directly (skip punctuation step)
-    corrected = processor._call_mistral(processor.grammar_system_prompt, erroneous_text)
+    corrected = processor._call_grammar_agent(erroneous_text)
 
     print("\n[OUTPUT — after grammar agent]\n")
     print(corrected)
