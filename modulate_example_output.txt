@@ -1,0 +1,6 @@
+{'utterance_uuid': 'a2e7b863-5b14-4bc1-a127-efe37e1b619e', 'text': "Le patient présente une fracture du tibia-péroné avec perte d'os.
+ À la ligne. Il faut savoir que dans ce cas-là, on recommande un plâtre pour six semaines avec des pansements 
+ réguliers, virgule. Aussi, il faudra que le patient soit réexaminé au bout de huit mois avec une radiographie, 
+ virgule, à l'hôpital Saint-Antoine. Point. À la ligne. Signé Docteur Philippe Nacache, Aumont-Chantilly,
+  le 27 février 2022.", 
+  'start_ms': 660, 'duration_ms': 42540, 'speaker': 1, 'language': 'fr', 'emotion': 'Neutral', 'accent': None}

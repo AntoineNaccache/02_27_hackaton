@@ -1,0 +1,17 @@
+Pioneer fastino
+
+Modulate : emotion detection, cluster of tiny model doing transcription (in parallel?)
+
+Airbyte : Connectors to third party palteforms MCP like
+
+Neo4J : Graph to trace agentic reasonning : This could be super useful for a compliance agent
+
+Render : Railway like, allows you to deploy an app. Deploies tout sur la même resosurce, front, back. 
+
+Tavily : Web Search for AI Agents
+
+Yutori : Search memory for following trends, navigator model for computer use, has an MCP Server
+
+Numeric : accounting AI Agent 
+
+Reka : Video and Image Search understanding model. Analysis of images or videos
