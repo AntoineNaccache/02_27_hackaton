@@ -14,8 +14,8 @@ import difflib
 # Force UTF-8 output on Windows
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
-# Allow imports from project root
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+# Allow imports from src/
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 from processors.fr import FrenchProcessor
 

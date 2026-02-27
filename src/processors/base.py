@@ -8,7 +8,7 @@ load_dotenv()
 _mistral_client = Mistral(api_key=os.getenv("MISTRAL_API_KEY"))
 MISTRAL_MODEL = "mistral-large-latest"
 
-_DOCTORS_FILE = os.path.join(os.path.dirname(__file__), "..", "doctors.json")
+_DOCTORS_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "doctors.json")
 _RULES_BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "grammar_rules")
 
 # ---------------------------------------------------------------------------

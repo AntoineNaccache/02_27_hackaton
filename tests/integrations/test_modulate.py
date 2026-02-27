@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 API_KEY = os.getenv("MODULATE_API_KEY")
-AUDIO_FILE = "samples\input_audios\CR_Fr.mp3"
+AUDIO_FILE = os.path.join(os.path.dirname(__file__), "..", "..", "samples", "input_audios", "CR_Fr.mp3")
 
 async def transcribe():
     data = aiohttp.FormData()

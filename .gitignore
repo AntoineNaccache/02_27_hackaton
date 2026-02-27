@@ -1,5 +1,16 @@
+# Environment
 .env
-/local
-/__pycache__
-.venv
-/processors/__pycache__
+.venv/
+
+# Python cache — matches __pycache__/ anywhere in the tree
+__pycache__/
+*.py[cod]
+*.pyd
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+# Local scratch space
+/local/
